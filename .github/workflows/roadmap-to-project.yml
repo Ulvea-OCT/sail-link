@@ -1,0 +1,23 @@
+name: Roadmap to Project
+
+on:
+  push:
+    paths:
+      - "roadmap/**"
+
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Parse and schedule only; do not modify GitHub"
+        required: false
+        type: boolean
+        default: true
+
+jobs:
+  roadmap:
+    uses: Ulvea-OCT/OCT-Workflows/.github/workflows/roadmap-to-project.yml@v1.0
+
+    with:
+      dry_run: ${{ inputs.dry_run }}
+
+    secrets: inherit
