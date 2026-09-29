@@ -15,7 +15,7 @@ on:
 
 jobs:
   roadmap:
-    uses: Ulvea-OCT/workflows/.github/workflows/roadmap-to-project.yml@v1.0
+    uses: Ulvea-OCT/workflows/.github/workflows/roadmap-to-project.yml@v1.1
 
     with:
       dry_run: ${{ inputs.dry_run }}
