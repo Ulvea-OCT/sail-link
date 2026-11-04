@@ -1,0 +1,24 @@
+{
+  "document_version": "0.1.0",
+  "protocol_version": 0,
+  "snapshot": {
+    "sequence": 1,
+    "generated_at": "2026-11-04T12:00:00Z"
+  },
+  "metrics": [
+    {
+      "id": "example.metric.alpha",
+      "name": "Example metric A",
+      "value": 12.3,
+      "unit": "EXAMPLE_UNIT",
+      "status": "TBD_VALID_STATUS"
+    },
+    {
+      "id": "example.metric.bravo",
+      "name": "Example metric B",
+      "value": 4.5,
+      "unit": "EXAMPLE_UNIT",
+      "status": "TBD_VALID_STATUS"
+    }
+  ]
+}

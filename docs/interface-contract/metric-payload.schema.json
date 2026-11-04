@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Sail-Link logical metric snapshot (draft)",
+  "description": "Draft logical contract only. Transport framing and final field semantics are intentionally unspecified.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "document_version",
+    "protocol_version",
+    "snapshot",
+    "metrics"
+  ],
+  "properties": {
+    "document_version": {
+      "type": "string",
+      "description": "SemVer of the logical contract/schema. Initial value TBD."
+    },
+    "protocol_version": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Integer protocol version. Value 0 is a draft placeholder only; initial released value and compatibility policy are TBD."
+    },
+    "snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "sequence"
+      ],
+      "properties": {
+        "sequence": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Illustrative snapshot sequence identifier; final semantics TBD."
+        },
+        "generated_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Optional timestamp; source/clock semantics TBD."
+        }
+      }
+    },
+    "metrics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "status"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Stable identifier derived from the verified Expedition catalogue."
+          },
+          "name": {
+            "type": "string",
+            "description": "Human-readable name from Expedition where available."
+          },
+          "value": {
+            "description": "Metric value in the original Expedition representation. Type/precision TBD."
+          },
+          "unit": {
+            "type": "string",
+            "description": "Original Expedition unit; no conversion is implied."
+          },
+          "status": {
+            "type": "string",
+            "minLength": 1,
+            "description": "Explicit per-metric status. Vocabulary and semantics TBD."
+          }
+        }
+      }
+    }
+  }
+}
